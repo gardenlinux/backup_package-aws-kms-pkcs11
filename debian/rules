@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+source:
+	:
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	dh_auto_build -- AWS_SDK_STATIC=y
+
+# Tests require AWS access
+override_dh_auto_test:
+	:
